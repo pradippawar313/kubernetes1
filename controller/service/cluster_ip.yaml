@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,4 +18,19 @@ spec:
     selector: 
         matchLabels:
             app: ip_app
+
+---
+
+apiVersion: apps/v1
+kind: Service
+metadata:
+    name: ip_app-cluster-ip
+spec:
+    type: ClusterIP
+    selector:
+        app: ip_app
+    ports:
+        - name: http
+          port: 30002
+          targetPort: 80
 
