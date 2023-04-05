@@ -1,19 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: nginx2
+    name: python-deployment
 spec:
-    replicas: 20
+    replicas: 4
     template:
         metadata:
             labels:
-                app: my-nginx
+                app: python
         spec:
             containers:
-                - name: nginx
-                  image: nginx:1.22.1
+                - name: ipapp
+                  image: pradippawar313/python:v1
                   ports:
                     - containerPort: 80
     selector: 
         matchLabels:
-            app: my-nginx
+            app: python
+
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+    name: python-cluster-ip
+spec:
+    type: ClusterIP
+    selector:
+        app: python
+    ports:
+        - name: http
+          port: 30002
+          targetPort: 80
