@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-    name: ip_app-statefulset
+    name: ip-app-statefulset
 spec:
     replicas: 4
     template:
         metadata:
             labels:
-                app: ip_app-sfs
+                app: ip-app-sfs
         spec:
             containers:
                 - name: ipapp
@@ -16,7 +16,7 @@ spec:
                     - containerPort: 80
     selector: 
         matchLabels:
-            app: ip_app-sfs
+            app: ip-app-sfs
 
 ---
 
