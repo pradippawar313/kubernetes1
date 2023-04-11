@@ -10,12 +10,12 @@ spec:
             - containerPort: 80
          env:
          - name: ENVIRONMENT
-           valueForm:
+           valueFrom:
               configMapKeyRef:
                 name: my-configmap1
                 key: env
          - name: APP
-           valueForm:
+           valueFrom:
               configMapKeyRef:
                 name: my-configmap1
                 key: app
