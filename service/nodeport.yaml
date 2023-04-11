@@ -31,5 +31,5 @@ spec:
     ports:
         - name: http
           port: 30003
-          targetPort: 80
-          nodePort: 300080
+          targetPort: 80 
+          nodePort: 30008
