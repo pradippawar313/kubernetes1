@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
     name: my-configmap1
 data:
-    env: test
+    env: prod
     app: frontend
