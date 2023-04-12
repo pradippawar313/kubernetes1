@@ -8,6 +8,9 @@ spec:
       image: busybox
       command: ["/bin/bash"]
       args: ["-c","echo '<html><h1>Init container</h1></html>' >> /shareDir/index.html"]
+      volumeMounts:
+      - name: shareDirectory
+        mountPath: "/shareDir"
     containers:
     - name: nginx
       image: nginx
@@ -15,7 +18,7 @@ spec:
       - containerPort: 80   
         volumeMounts:
       - name: shareDirectory
-        mountPath: "/shareDir"
+        mountPath: "/usr/share/nginx/html"
     volumes:
     - name: shareDirectory
       emptyDir: {}
