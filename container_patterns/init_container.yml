@@ -15,7 +15,7 @@ spec:
       - containerPort: 80   
         volumeMounts:
       - name: shareDirectory
-        mountPath: "/usr/share/nginx/html"
+        mountPath: "/shareDir"
     volumes:
     - name: shareDirectory
       emptyDir: {}
