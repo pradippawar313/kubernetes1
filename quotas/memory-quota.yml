@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-with-memory-limit-with-priority
+  name: pod-with-memory-limit-with-high-priority
   namespace: default
 spec:
   containers:
